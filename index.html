@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Modern Strategy Prototype</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Modern Strategy Prototype</h1>
+    <div class="controls">
+      <button id="btnPause">Pause</button>
+      <button id="btnPlay">Play</button>
+      <button id="btnFast">Fast</button>
+      <span id="tickInfo">Tick: 0 | Speed: 1x</span>
+      <button id="btnSave">Save</button>
+      <button id="btnLoad">Load</button>
+      <button id="btnNew">New Game</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="left">
+      <canvas id="map" width="960" height="540"></canvas>
+      <div class="hint">Click a tile to select. Right-click to set unit destination.</div>
+    </section>
+
+    <section class="right">
+      <div class="panel" id="nationPanel">
+        <h2>Nation</h2>
+        <div id="nationInfo"></div>
+        <div class="row">
+          <button id="btnResearch">Research</button>
+          <button id="btnDiplomacy">Diplomacy</button>
+          <button id="btnProduction">Production</button>
+        </div>
+      </div>
+
+      <div class="panel" id="tilePanel">
+        <h2>Tile</h2>
+        <div id="tileInfo">Select a tile</div>
+      </div>
+
+      <div class="panel" id="cityPanel">
+        <h2>City</h2>
+        <div id="cityInfo"></div>
+        <div class="row">
+          <select id="buildSelect">
+            <option value="">— choose —</option>
+            <option value="INF">Infantry</option>
+            <option value="ARM">Armor</option>
+            <option value="ART">Artillery</option>
+            <option value="AIR">Air Wing</option>
+            <option value="NAV">Patrol Boat</option>
+            <option value="FACTORY">Factory</option>
+            <option value="RADAR">Radar</option>
+          </select>
+          <button id="btnQueue">Queue</button>
+          <button id="btnClearQueue">Clear</button>
+        </div>
+        <div id="queueList"></div>
+      </div>
+
+      <div class="panel" id="unitPanel">
+        <h2>Unit</h2>
+        <div id="unitInfo">Select a unit</div>
+        <div class="row">
+          <button id="btnHold">Hold</button>
+          <button id="btnMove">Move</button>
+          <button id="btnFortify">Fortify</button>
+          <button id="btnDelete">Disband</button>
+        </div>
+      </div>
+
+      <div class="panel" id="researchPanel">
+        <h2>Research</h2>
+        <div id="researchInfo"></div>
+        <div id="techTree"></div>
+      </div>
+
+      <div class="panel" id="diplomacyPanel">
+        <h2>Diplomacy</h2>
+        <div id="diplomacyInfo"></div>
+        <div id="dipList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Local prototype. Autosaves to your browser.</small>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
