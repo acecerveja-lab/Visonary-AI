@@ -1,0 +1,97 @@
+:root {
+  --bg: #0c121a;
+  --panel: #141b24;
+  --accent: #00bcd4;
+  --text: #e7eef7;
+  --muted: #9fb0c6;
+  --danger: #eb5757;
+  --ok: #27ae60;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0c121a 0%, #0f1420 100%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #1f2a38;
+}
+h1 { margin: 0; font-size: 18px; letter-spacing: 0.5px; }
+.controls button {
+  margin-right: 8px;
+  background: var(--panel);
+  border: 1px solid #273246;
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.controls button:hover { border-color: var(--accent); }
+#tickInfo { margin-left: 8px; color: var(--muted); }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 12px;
+  padding: 12px;
+}
+
+.left { position: relative; }
+#map {
+  width: 100%;
+  height: auto;
+  border: 1px solid #1f2a38;
+  background: #0a0f17;
+}
+.hint {
+  position: absolute; bottom: 8px; left: 8px;
+  color: var(--muted); font-size: 12px;
+  background: rgba(20,27,36,0.7);
+  padding: 6px 8px; border-radius: 6px;
+}
+
+.right {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid #273246;
+  border-radius: 10px;
+  padding: 10px;
+}
+.panel h2 {
+  margin: 4px 0 8px; font-size: 15px; color: var(--accent);
+}
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+select, .panel button {
+  background: #0f1622; color: var(--text);
+  border: 1px solid #273246; border-radius: 6px;
+  padding: 6px 8px;
+}
+.panel button:hover { border-color: var(--accent); }
+
+#queueList, #techTree, #dipList {
+  margin-top: 8px; max-height: 160px; overflow: auto;
+  border-top: 1px dashed #273246; padding-top: 6px;
+}
+.item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 4px 0; border-bottom: 1px dashed #1f2a38;
+}
+.badge { padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+.badge.ok { background: rgba(39,174,96,0.2); color: var(--ok); }
+.badge.no { background: rgba(235,87,87,0.2); color: var(--danger); }
+
+footer {
+  border-top: 1px solid #1f2a38;
+  padding: 8px 16px; color: var(--muted);
+}
